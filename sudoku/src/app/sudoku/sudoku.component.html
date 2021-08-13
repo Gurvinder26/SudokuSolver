@@ -15,9 +15,16 @@
       </tr>
     </table>
 
-    <p *ngIf="showError">Please enter a valid sudoku</p>
-
-    <button (click)="solveSudoku()">Solve</button>
-    <button (click)="resetForm()">Reset</button>
+    <div class="error">
+      <mat-error *ngIf="showError">Please enter a valid sudoku</mat-error>
+    </div>
+    <div class="action-container">
+      <button mat-raised-button color="primary" (click)="solveSudoku()">
+        Solve
+      </button>
+      <button mat-raised-button color="accent" (click)="resetForm()">
+        Reset
+      </button>
+    </div>
   </form>
 </ng-container>
