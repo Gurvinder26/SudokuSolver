@@ -1,0 +1,23 @@
+<ng-container *ngIf="form"
+  ><h1>Sudoku Solver</h1>
+  <form>
+    <table>
+      <tr *ngFor="let row of form.controls">
+        <td *ngFor="let col of row.controls">
+          <input
+            type="number"
+            min="1"
+            max="9"
+            maxlength="1"
+            [formControl]="col"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <p *ngIf="showError">Please enter a valid sudoku</p>
+
+    <button (click)="solveSudoku()">Solve</button>
+    <button (click)="resetForm()">Reset</button>
+  </form>
+</ng-container>
