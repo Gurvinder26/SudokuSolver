@@ -17,7 +17,6 @@ export class SudokuComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    // this.matrix = Sudoku.createSudokuMatrix();
     this.form = this.fb.array([]);
     this.createForm();
   }
@@ -27,7 +26,7 @@ export class SudokuComponent implements OnInit {
       this.form.push(this.fb.array([]));
       for (let c = 0; c < 9; c++) {
         let a: FormArray = this.form.controls[r] as FormArray;
-        a.push(new FormControl(0));
+        a.push(new FormControl(''));
       }
     }
   }
@@ -45,6 +44,6 @@ export class SudokuComponent implements OnInit {
 
   public resetForm() {
     this.showError = false;
-    this.form.reset(new Array(9).fill(0).map(() => new Array(9).fill(0)));
+    this.form.reset(new Array(9).fill('').map(() => new Array(9).fill('')));
   }
 }

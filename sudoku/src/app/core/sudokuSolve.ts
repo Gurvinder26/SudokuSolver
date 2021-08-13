@@ -26,7 +26,7 @@ export class Sudoku {
     for (let r = 0; r < 9 && this.isValidSudoku; r++) {
       for (let c = 0; c < 9; c++) {
         const val = this._matrix[r][c];
-        if (val !== 0) {
+        if (val) {
           const boxId = this._getBoxId(r, c);
           if (
             this._rows[r][val] ||
@@ -87,7 +87,7 @@ export class Sudoku {
     if (r === this._matrix.length || c === this._matrix[0].length) {
       return true;
     } else {
-      if (this._matrix[r][c] === 0) {
+      if (this._matrix[r][c] === '') {
         for (let num = 1; num <= 9; num++) {
           this._matrix[r][c] = num;
 
@@ -110,7 +110,7 @@ export class Sudoku {
             delete this._rows[r][num];
             delete this._cols[c][num];
           }
-          this._matrix[r][c] = 0;
+          this._matrix[r][c] = '';
         }
       } else {
         if (c === this._matrix[0].length - 1) {
