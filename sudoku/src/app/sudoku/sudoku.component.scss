@@ -1,4 +1,4 @@
-$small: 600px;
+$medium: 800px;
 
 h1 {
   text-align: center;
@@ -29,7 +29,7 @@ table {
     width: 50px;
     box-sizing: border-box;
 
-    @media screen and (max-width: $small) {
+    @media screen and (max-width: $medium) {
       height: 30px;
       width: 30px;
     }
@@ -60,7 +60,7 @@ table {
         margin: 0;
       }
 
-      @media screen and (max-width: $small) {
+      @media screen and (max-width: $medium) {
         height: 30px;
         width: 30px;
         font-size: 15px;
@@ -80,6 +80,9 @@ table {
   button {
     margin: 10px;
     width: 200px;
+    @media screen and (max-width: $medium) {
+      width: 150px;
+    }
   }
 }
 
