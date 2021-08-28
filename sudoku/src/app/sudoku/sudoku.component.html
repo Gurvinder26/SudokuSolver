@@ -4,13 +4,7 @@
     <table>
       <tr *ngFor="let row of form.controls">
         <td *ngFor="let col of row.controls">
-          <input
-            type="number"
-            min="1"
-            max="9"
-            maxlength="1"
-            [formControl]="col"
-          />
+          <input type="text" maxlength="1" [formControl]="col" numberOnly />
         </td>
       </tr>
     </table>

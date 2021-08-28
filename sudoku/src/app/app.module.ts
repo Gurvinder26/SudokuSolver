@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { SudokuComponent } from './sudoku/sudoku.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NumberOnlyDirective } from './core/number-only.directive';
 
 @NgModule({
-  declarations: [AppComponent, SudokuComponent],
+  declarations: [AppComponent, SudokuComponent, NumberOnlyDirective],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
